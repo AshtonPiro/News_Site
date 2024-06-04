@@ -1,5 +1,5 @@
-const API_KEY = "20125984b49344b9af80fefe1e5276b8";
-const url = "https://newsapi.org/v2/everything?q=";
+// const API_KEY = "20125984b49344b9af80fefe1e5276b8";
+const url = "https://inshorts.deta.dev/news?category=";
 
 window.addEventListener("load", () => fetchNews("India"));
 
