@@ -10,14 +10,20 @@ function reload() {
 async function fetchNews(query) {
     try {
         const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
-        if (res.status === 426) {
-            console.error("API requires a protocol upgrade. Check the API documentation for required changes.");
-            return;
+        if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
         }
         const data = await res.json();
+        console.log(data);  // Log the full response for debugging
+
+        if (!data.articles) {
+            throw new Error("Response does not contain 'articles'");
+        }
+
         bindData(data.articles);
     } catch (error) {
         console.error("Error fetching news:", error);
+        alert("Failed to fetch news. Please try again later.");
     }
 }
 
