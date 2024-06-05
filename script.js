@@ -1,7 +1,7 @@
 const API_KEY = "20125984b49344b9af80fefe1e5276b8";
 const url = "https://newsapi.org/v2/everything?q=";
 
-window.addEventListener("load", () => fetchNews("US"));
+window.addEventListener("load", () => fetchNews("India"));
 
 function reload() {
     window.location.reload();
@@ -10,7 +10,13 @@ function reload() {
 async function fetchNews(query) {
     const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
     const data = await res.json();
-    bindData(data.articles);
+    
+    // Ensure the response format includes the status, totalResults, and articles
+    if (data.status === "ok") {
+        bindData(data.articles);
+    } else {
+        console.error("Failed to fetch news:", data);
+    }
 }
 
 function bindData(articles) {
