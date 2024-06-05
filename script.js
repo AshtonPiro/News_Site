@@ -9,6 +9,7 @@ function reload() {
 
 async function fetchNews(query) {
     try {
+        // Added date filter and sorting
         const res = await fetch(`${url}${query}&from=2024-05-05&sortBy=publishedAt&apiKey=${API_KEY}`);
         const data = await res.json();
         
@@ -30,7 +31,7 @@ function bindData(articles) {
     cardsContainer.innerHTML = "";
 
     articles.forEach((article) => {
-        if (!article.urlToImage) return;
+        if (!article.urlToImage) return; // Skip articles without images
         const cardClone = newsCardTemplate.content.cloneNode(true);
         fillDataInCard(cardClone, article);
         cardsContainer.appendChild(cardClone);
