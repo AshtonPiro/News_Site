@@ -1,3 +1,19 @@
+initInterceptor() {
+    const e = n.fetch;
+    n.fetch = async (...t) => {
+        this.interceptRequest(...t);
+
+        // Force HTTPS if not already present
+        let url = t[0]; 
+        if (typeof url === 'string' && !url.startsWith('https://')) {
+            url = url.replace('http://', 'https://');
+            t[0] = url; 
+        }
+
+        const n = await e(...t);
+        return this.interceptResponse(n, t), n;
+    };
+}
 const API_KEY = "20125984b49344b9af80fefe1e5276b8";
 const url = "https://newsapi.org/v2/everything?q=";
 
