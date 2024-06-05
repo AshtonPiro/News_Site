@@ -8,14 +8,18 @@ function reload() {
 }
 
 async function fetchNews(query) {
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
-    const data = await res.json();
-    
-    // Ensure the response format includes the status, totalResults, and articles
-    if (data.status === "ok") {
-        bindData(data.articles);
-    } else {
-        console.error("Failed to fetch news:", data);
+    try {
+        const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+        const data = await res.json();
+        
+        // Ensure the response format includes the status, totalResults, and articles
+        if (data.status === "ok" && Array.isArray(data.articles)) {
+            bindData(data.articles);
+        } else {
+            console.error("Failed to fetch news or invalid response format:", data);
+        }
+    } catch (error) {
+        console.error("Error fetching news:", error);
     }
 }
 
