@@ -5,23 +5,19 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-/* Flexbox container to ensure content fits within the viewport */
-.container {
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Full viewport height */
 }
 
 .hero {
     position: relative;
-    flex: 1; /* Takes up remaining space after footer */
+    width: 100%;
+    flex: 1; /* Allows hero to take up the remaining space after footer */
     background: url('van.jpg') no-repeat center center/cover; /* Replace with your delivery van image */
     display: flex;
     justify-content: center;
@@ -88,6 +84,21 @@ footer {
     font-size: 1.2rem;
 }
 
+/* Make sure hero section and footer fit the viewport */
+html, body {
+    height: 100%;
+}
+
+.hero {
+    min-height: calc(100vh - 70px); /* Adjust height to leave space for the footer */
+}
+
+footer {
+    height: 70px; /* Fixed height for footer */
+    width: 100%;
+    font-size: 1rem;
+}
+
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
     .hero h1 {
@@ -99,8 +110,5 @@ footer {
     .button-group .btn {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
-    }
-    footer {
-        font-size: 1rem;
     }
 }
