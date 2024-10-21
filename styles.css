@@ -5,13 +5,11 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    overflow: hidden; /* Disable scrolling */
-    font-family: Arial, sans-serif;
-}
-
 body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -20,8 +18,7 @@ body {
     position: relative;
     width: 100%;
     flex: 1;
-    background: url('hero.jpg') no-repeat center center;
-    background-size: contain; /* Ensure no zoom */
+    background: url('hero.jpg') no-repeat center center/cover; /* Local image path */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,13 +82,21 @@ footer {
     text-align: center;
     padding: 1rem;
     font-size: 1.2rem;
-    height: 70px; /* Fixed height */
-    width: 100%;
 }
 
 /* Make sure hero section and footer fit the viewport */
+html, body {
+    height: 100%;
+}
+
 .hero {
     min-height: calc(100vh - 70px); /* Adjust height to leave space for the footer */
+}
+
+footer {
+    height: 70px; /* Fixed height for footer */
+    width: 100%;
+    font-size: 1rem;
 }
 
 /* Media Queries for responsiveness */
