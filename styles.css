@@ -91,8 +91,8 @@ footer {
     width: 100%;
     flex: 1;
     background: url('van.jpg') no-repeat center center;
-    background-size: contain; /* Change from cover to contain to avoid zoom */
-    background-attachment: fixed; /* Optional: This will make the image stay fixed when scrolling */
+    background-size: contain; /* Ensures the image fits without zooming */
+    background-attachment: scroll; /* Use 'scroll' instead of 'fixed' to avoid zoom effect */
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
@@ -101,6 +101,7 @@ footer {
     text-align: center;
     color: white;
 }
+
 /* Ensure footer sticks to the bottom */
 body {
     margin: 0;
