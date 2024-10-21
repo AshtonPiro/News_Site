@@ -13,19 +13,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-.hero {
-    position: relative;
-    width: 100%;
-    flex: 1;
-    background: url('hero.jpg') no-repeat center center/cover; /* Local image path */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-}
-
 .overlay {
     position: absolute;
     top: 0;
