@@ -89,7 +89,7 @@ footer {
     position: relative;
     width: 100%;
     flex: 1;
-    background: url('van.jpg') no-repeat center center;
+    background: url('hero.jpg') no-repeat center center;
     background-size: contain; /* Change from cover to contain to avoid zoom */
     background-attachment: fixed; /* Optional: This will make the image stay fixed when scrolling */
     background-position: center;
