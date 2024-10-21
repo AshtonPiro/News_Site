@@ -8,14 +8,11 @@ body {
     position: relative;
     text-align: center;
     color: white;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden;
 }
 
 .hero img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the full area */
+    height: auto;
 }
 
 .hero-text {
@@ -24,7 +21,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 1; /* Make sure text stays above the image */
 }
 
 .hero-text h1 {
@@ -41,7 +37,6 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    z-index: 1; /* Make sure buttons stay above the image */
 }
 
 .button-group .btn {
@@ -68,16 +63,4 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-}
-
-@media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-    .hero-text p {
-        font-size: 1rem;
-    }
-    .button-group .btn {
-        padding: 0.5rem 1rem;
-    }
 }
