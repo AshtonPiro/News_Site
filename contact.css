@@ -17,6 +17,7 @@ nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: row; /* Make sure it stays in a row */
 }
 
 nav ul li {
@@ -96,12 +97,13 @@ footer a {
     }
 
     nav ul {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row; /* Ensure it stays in a row on mobile */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        justify-content: space-around; /* Space out items evenly */
     }
 
     nav ul li {
-        margin: 0.5rem 0;
+        margin: 0.5rem; /* Smaller margin for mobile */
     }
 
     .content {
