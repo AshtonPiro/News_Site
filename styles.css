@@ -21,9 +21,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    padding: 0 1rem;
-    width: 100%;
-    box-sizing: border-box; /* Ensure proper spacing for smaller screens */
 }
 
 .hero-text h1 {
@@ -40,7 +37,6 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 1rem;
 }
 
 .button-group .btn {
@@ -69,37 +65,16 @@ footer {
     padding: 1rem;
 }
 
-/* Mobile Responsive Styles */
-@media only screen and (max-width: 600px) {
+/* Add media queries to handle mobile screens */
+@media (max-width: 768px) {
     .hero-text h1 {
-        font-size: 1.75rem;
+        font-size: 2rem; /* Smaller font size for mobile */
     }
-
     .hero-text p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
+        font-size: 1rem; /* Adjust paragraph text for smaller screens */
     }
-
-    .button-group {
-        flex-direction: column; /* Stack buttons vertically on smaller screens */
-        align-items: center;
-    }
-
     .button-group .btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-        margin: 0.3rem;
-        width: 80%; /* Ensure buttons span the width of the screen */
-        text-align: center;
-    }
-
-    .hero-text {
-        width: 90%; /* Ensure the hero text doesn't overflow on small screens */
-        box-sizing: border-box;
-        padding: 0 1rem;
-    }
-
-    footer {
-        padding: 0.75rem;
+        padding: 0.5rem 1rem; /* Smaller buttons */
     }
 }
+
