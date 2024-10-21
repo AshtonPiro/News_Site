@@ -45,4 +45,20 @@ footer {
     text-align: center;
     padding: 1rem;
 }
+/* Ensure footer sticks to the bottom */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto; /* Pushes footer to the bottom */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
 
