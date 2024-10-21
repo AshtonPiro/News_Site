@@ -17,8 +17,8 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    flex: 1; /* Allows hero to take up the remaining space after footer */
-    background: url('van.jpg') no-repeat center center/cover; /* Replace with your delivery van image */
+    flex: 1;
+    background: url('van.jpg') no-repeat center center/cover; /* Main hero section image */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +32,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    background: url('overlay-img.png') no-repeat center center/cover; /* Replace 'overlay-img.png' with your image */
+    opacity: 0.7; /* Optional: Adjust opacity for better visibility */
 }
 
 .hero-content {
