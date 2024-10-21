@@ -21,6 +21,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    max-width: 90%;
 }
 
 .hero-text h1 {
@@ -63,4 +64,25 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
+}
+
+/* Media Queries for mobile screens */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem;  /* Slightly smaller heading */
+    }
+
+    .hero-text p {
+        font-size: 1rem; /* Smaller text for mobile screens */
+    }
+
+    .button-group .btn {
+        padding: 0.5rem 1rem;  /* Smaller buttons for mobile */
+        font-size: 0.9rem;     /* Adjust font size in buttons */
+    }
+
+    .hero img {
+        height: 300px; /* Reduce height for mobile to prevent large image overflow */
+        object-fit: cover; /* Ensure the image fills the available space nicely */
+    }
 }
