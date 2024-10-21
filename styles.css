@@ -1,0 +1,114 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    background: url('van.jpg') no-repeat center center/cover; /* Local image path */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button-group .btn {
+    background: #fff;
+    color: #823802;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.button-group .btn:hover {
+    background: #823802;
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/* Footer styling */
+footer {
+    background: #823802;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Make sure hero section and footer fit the viewport */
+html, body {
+    height: 100%;
+}
+
+.hero {
+    min-height: calc(100vh - 70px); /* Adjust height to leave space for the footer */
+}
+
+footer {
+    height: 70px; /* Fixed height for footer */
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .button-group .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
