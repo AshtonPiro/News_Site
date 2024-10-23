@@ -45,6 +45,9 @@ footer {
     text-align: center;
     padding: 1rem;
 }
+footer a {
+    color: white;
+}
 /* Ensure footer sticks to the bottom */
 body {
     margin: 0;
