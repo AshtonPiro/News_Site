@@ -71,7 +71,9 @@ footer {
     padding: 1rem;
     font-size: 1.2rem;
 }
-
+footer a {
+    color: white;
+}
 /* Make sure hero section and footer fit the viewport */
 html, body {
     height: 100%;
