@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Packers & Movers</title>
     <link rel="stylesheet" href="about.css">
+<script>
+        // Function to check user location
+        async function checkUserLocation() {
+            try {
+                // Fetch location data from ipinfo.io
+                const response = await fetch('https://ipinfo.io?token=a4e6c1274cdd5c');
+                const data = await response.json();
+                const userRegion = data.region; // Get the region from the response
+
+                // Check if the region is Odisha
+                if (userRegion !== "Odisha") {
+                    alert("Sorry, this service is only available for residents of Odisha.");
+                    window.location.href = "https://your-alternate-url.com"; // Redirect non-Odisha users
+                }
+            } catch (error) {
+                console.error("Error fetching location data:", error);
+                alert("Location verification failed. Access denied.");
+            }
+        }
+
+        // Run location check on page load
+        window.onload = checkUserLocation;
+</script>    
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPN81G5QMJ">
 </script>
